@@ -8,11 +8,11 @@ Grading Rubric:
 25% for Handing in your work properly and on time via GITHUB
 
 
-    /*  student Name:satvir singh 
-      student ID: 201703432
-        date: 28/11/2019
-        name of work:  Pokemon Game
-        Language: PHP
+    /* 	student Name: 
+    	student ID: 
+       	date: 
+       	name of work:  Pokemon Game
+       	Language: PHP
     */
 
 References: 
@@ -41,7 +41,8 @@ class Pokemon
         return (rand(1,100));
     }
 }
-$PokemonNames= array('BulbasaurDagger', 'Ivysaur',
+
+$PokemonNames = array('BulbasaurDagger', 'Ivysaur',
 'Venusaur',
 'CharmanderDagger',
 'Charmeleon',
@@ -62,35 +63,34 @@ $PokemonNames= array('BulbasaurDagger', 'Ivysaur',
 'Raticate',
 'Spearow');
 
-$PokemonTypes=array('Fire','water','psychic','charmender','ground','electric');
+$PokemonTypes = array('Fire','water','psychic','charmender','ground','electric');
 
 $Pokeballs = array();
-for($counter=1; $counter<20; $counter++){
+for($counter=1; $counter<=20; $counter++)
+{
     $Pikachu = new Pokemon;
-    $Pikachu->PokemonNames=array_pop($PokemonNames);
-    $Pikachu->PokemonTypes=$PokemonTypes[rand(0,sizeof($Pokemontypes)-1)];
+    $Pikachu->PokemonName=array_pop($PokemonNames);
+    $Pikachu->PokemonTypes=$PokemonTypes[rand(0,sizeof($PokemonTypes)-1)];
+    
     $Pokeballs[] = $Pikachu;
 }
 // var_dump($Pokeballs);
 
 // Part One: #todo: Write code to perform 10 Battles
 
-for($battlesCount=1;$battlesCount<=10;$battlesCount++){
+for($battlesCount=1; $battlesCount<=10; $battlesCount++){
   // randomly  pull 2 pokemons : array name is $pokeballs.
-  echo "BATTLE: " .$battlesCount;
+echo "BATTLE: " .$battlesCount;
 $pokemon1=array_pop($Pokeballs); 
 $pokemon2=array_pop($Pokeballs);
 
-$pokemon1_attackStrength= $pokemon1->doPokemonAttack();
-$pokemon2_attackStrength= $pokemon2->doPokemonAttack();
+
+$pokemon1_attackStrength = $pokemon1->doPokemonAttack();
+$pokemon2_attackStrength = $pokemon2->doPokemonAttack();
 
 echo "Pokemon 1 attack strength: ".$pokemon1_attackStrength."\r\n";
 echo "Pokemon 2 attack strength: ".$pokemon2_attackStrength."\r\n";
 }
-
- 
-
-// Part Three: #todo: Create a POKEDEX to store the results of BATTLES  
-
+// part three: #todo: create a pokedex to store the battle results
 echo "fini";
 ?>
