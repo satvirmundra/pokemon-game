@@ -8,11 +8,11 @@ Grading Rubric:
 25% for Handing in your work properly and on time via GITHUB
 
 
-    /* 	student Name:satvir singh
-    	student ID:2017003432
-       	date:20 nov 2019
-       	name of work:  pokemon game
-       	Language: PHP
+    /*  student Name:satvir singh 
+      student ID: 201703432
+        date: 28/11/2019
+        name of work:  Pokemon Game
+        Language: PHP
     */
 
 References: 
@@ -41,33 +41,54 @@ class Pokemon
         return (rand(1,100));
     }
 }
+$PokemonNames= array('BulbasaurDagger', 'Ivysaur',
+'Venusaur',
+'CharmanderDagger',
+'Charmeleon',
+'Charizard',
+'SquirtleDagger',
+'Wartortle',
+'Blastoise',
+'Caterpie',
+'Metapod',
+'Butterfree',
+'Weedle',
+'Kakuna',
+'Beedrill',
+'Pidgey',
+'Pidgeotto',
+'Pidgeot',
+'Rattata',
+'Raticate',
+'Spearow');
+
+$PokemonTypes=array('Fire','water','psychic','charmender','ground','electric');
+
 $Pokeballs = array();
-for($counter=1; $counter<6; $counter++){
+for($counter=1; $counter<20; $counter++){
     $Pikachu = new Pokemon;
-    $Pikachu->PokemonName=(string)$counter;
+    $Pikachu->PokemonNames=array_pop($PokemonNames);
+    $Pikachu->PokemonTypes=$PokemonTypes[rand(0,sizeof($Pokemontypes)-1)];
     $Pokeballs[] = $Pikachu;
 }
 // var_dump($Pokeballs);
 
-// part one : #todo :write code to perform 10 battle
-for($battlecount==1,$battlecount<=10;$battlecount++){
-//randomly pull 2 pokemon: array name is $pokeballs
-$pokemon1=array_pop($pokeballs;
-$pokemon2=array_pop($pokeballs;
-$pokemon1_attackStrength=$pokemon1->dppokemonAttack();
-$pokemon2_attackStrength=$pokemon2->dppokemonAttack();
-echo”pokemon 1 attack strength:”.$pokemon1_attackstrength.”\r\n”;
-echo”pokemon 2 attack strength:”.$pokemon2_attackstrength.”\r\n”;
+// Part One: #todo: Write code to perform 10 Battles
 
-// for each battle, randomly pull 2 Pokemon out of the Pokeball
-// let them each do their Attack
-// Strongest Attack Wins!
-// Output the contestants and the Winners!!!
-// POKEMON: I CHOOSE YOU!
+for($battlesCount=1;$battlesCount<=10;$battlesCount++){
+  // randomly  pull 2 pokemons : array name is $pokeballs.
+  echo "BATTLE: " .$battlesCount;
+$pokemon1=array_pop($Pokeballs); 
+$pokemon2=array_pop($Pokeballs);
 
-// Part Two: #todo: Give your Pokemon Names and Types: Create an array of Names
-// use rand to select a Name for each Pokemon
-// make sure to remove that name from the array so it is not issued Twice!!!  
+$pokemon1_attackStrength= $pokemon1->doPokemonAttack();
+$pokemon2_attackStrength= $pokemon2->doPokemonAttack();
+
+echo "Pokemon 1 attack strength: ".$pokemon1_attackStrength."\r\n";
+echo "Pokemon 2 attack strength: ".$pokemon2_attackStrength."\r\n";
+}
+
+ 
 
 // Part Three: #todo: Create a POKEDEX to store the results of BATTLES  
 
