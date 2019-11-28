@@ -49,7 +49,16 @@ for($counter=1; $counter<6; $counter++){
 }
 // var_dump($Pokeballs);
 
-// Part One: #todo: Write code to perform 10 Battles
+// part one : #todo :write code to perform 10 battle
+for($battlecount==1,$battlecount<=10;$battlecount++){
+//randomly pull 2 pokemon: array name is $pokeballs
+$pokemon1=array_pop($pokeballs;
+$pokemon2=array_pop($pokeballs;
+$pokemon1_attackStrength=$pokemon1->dppokemonAttack();
+$pokemon2_attackStrength=$pokemon2->dppokemonAttack();
+echo”pokemon 1 attack strength:”.$pokemon1_attackstrength.”\r\n”;
+echo”pokemon 2 attack strength:”.$pokemon2_attackstrength.”\r\n”;
+
 // for each battle, randomly pull 2 Pokemon out of the Pokeball
 // let them each do their Attack
 // Strongest Attack Wins!
